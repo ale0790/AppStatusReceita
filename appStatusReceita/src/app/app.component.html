@@ -1,0 +1,30 @@
+
+
+<div class="p-grid">
+  <div class="p-col-12 p-md-12 p-lg-12">
+    <p-card style="text-align:center;">
+      <h2>{{descricaoDashboard | meuPipe}}</h2>
+    </p-card>
+  </div>
+    <div class="p-col-12 p-md-4 p-lg-4">
+    <p-fieldset legend="Situação dos servidores">
+        <app-status></app-status>
+      </p-fieldset>
+    </div>
+    <div class="p-col-12 p-md-4 p-lg-4">
+      <p-fieldset legend="Consulta da situação do estado por data">
+          <app-status-estado-data></app-status-estado-data>
+        </p-fieldset>
+   </div>
+   <div class="p-col-12 p-md-4 p-lg-4">
+        <p-fieldset legend="Consulta da situação por servidor">
+            <app-status-estado></app-status-estado>
+          </p-fieldset>
+
+            <app-estado-indisponibilidade></app-estado-indisponibilidade>
+     </div>
+    
+</div>
+
+
+

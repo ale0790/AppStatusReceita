@@ -1,0 +1,26 @@
+<p-table [value]="status">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Autorizador</th>
+            <th>Consulta</th>
+            <th>Situação</th>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-sta>
+        <tr>
+            <td>{{sta.descricao}}</td>
+            <td>
+                {{sta.dataConsulta | date:'dd-MM-yyyy hh:mm'}}</td>
+            <td>
+                    <div *ngIf="sta.status == 'ON'">
+                        <p style="color: green; font-weight: bold;">{{sta.status}}</p>
+                      </div>
+                      <div *ngIf="sta.status != 'ON'">
+                        <p style="color: red; font-weight: bold">{{sta.status}}</p>
+                      </div>
+            </td>
+         
+        </tr>
+    </ng-template>
+</p-table>

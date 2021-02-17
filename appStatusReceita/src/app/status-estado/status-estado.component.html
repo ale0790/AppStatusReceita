@@ -1,0 +1,22 @@
+<p-dropdown
+  [options]="estados"
+  [(ngModel)]="selectedEstado"
+  optionLabel="name"
+  optionValue="code"
+  placeholder="Selecione um estado"
+  [showClear]="true"
+  (onChange)="onChangeEstado($event)"
+></p-dropdown>
+<div *ngFor="let obj of resultadoEstado">
+  <div>Servidor: {{ obj.descricao }}</div>
+  <div>Última consulta: {{ obj.dataConsulta | date: "dd-MM-yyyy hh:mm" }}</div>
+
+  <div *ngIf="obj.status == 'ON'">
+    
+    <p style="color: green; font-weight: bold">Situação: {{ obj.status }}</p>
+  </div>
+  <div *ngIf="obj.status != 'ON'">
+   
+    <p style="color: red; font-weight: bold"> Situação: {{ obj.status }}</p>
+  </div>
+</div>
